@@ -1,0 +1,31 @@
+05. Task
+- 자동으로 쌓인다
+- 자연스러운 TaskFlow
+                                        A
+A ----> B ----> C ----> B ----> A ----> B
+        A       B       A       B
+                A
+
+- Stack
+    -> 햄버거처럼 아래에서 위로 쌓이는 것
+    -> Task가 쌓인다(Activity와 유사)
+    -> A -> B -> C 점점 쌓임. C를 지우면 B가 나타남
+
+    -> 켜지는 방법을 자체 속성으로 가지고 있는 경우 : launchMode
+    -> 켜지는 방법을 지시하는 경우 : IntentFalg
+
+- LaunchMode
+   1) 다중허용: 동일한 Task를 위에 쌓는 것을 허용할 것인가
+    -> Standard         허용
+    -> singleTop        조건부허용 -> 열려고 하는 엑티비티가 현재 엑티비티라면 onNewIntent를 호출한다
+    -> singleTask       허용x
+    -> SingleInstance   허용x
+
+- IntentFlag
+    -> FLAG_ACTIVITY_NEW_TASK
+    -> FLAG_ACTIVITY_SINGLE_TOP
+    -> FLAG_ACTIVITY_CLEAR_TOP
+    등등..
+
+-> task는 스택으로 쌓인다. 개발하며 안 걸드면 가장 좋다. 사용자가 자연스럽게 느낌.
+LaunchMode, IntentFlag는 사용이 매우 어렵다. 이해가 적은 상태에서는 관리하기 정말 어렵다.

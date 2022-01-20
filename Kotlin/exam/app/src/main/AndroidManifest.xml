@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.exam">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".MasterApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="My Application"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/MyTheme"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".AppleActivity"
+            android:exported="true">
+
+        </activity>
+
+        <activity
+            android:name=".MytubeDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MytubeActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".HenrystagramUploadActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HenrystagramMyPostListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HenrystagramUserInfo"
+            android:exported="true" />
+        <activity android:name=".HenrystagramPostListActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".EmailSignupActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".PermissionActivity" />
+        <activity android:name=".RetrofitActivity" />
+        <activity android:name=".NetworkActivity" />
+        <activity android:name=".AsyncActivity" />
+        <activity android:name=".RealmActivity" />
+        <activity android:name=".SharedpreferenceActivity" />
+        <activity android:name=".TabPager2Activity" />
+        <activity android:name=".TabPagerLayout" />
+        <activity android:name=".PhoneBookWithRecyclerViewActivity" />
+        <activity android:name=".RecyclerViewActivity" />
+        <activity android:name=".ListViewActivity" />
+        <activity android:name=".PhoneBookDetailActivity" />
+        <activity android:name=".ContactsActivity" />
+        <activity android:name=".AddviewActivity" />
+        <activity android:name=".Android.LibraryActicity" />
+        <activity android:name=".ThreadActicity" />
+        <activity android:name=".ContextActivity" />
+        <activity android:name=".Resource" />
+        <activity android:name=".NullSafety" />
+        <activity android:name=".FragmentActivity" />
+        <activity android:name=".open_internet" />
+        <activity android:name=".Intent2" />
+        <activity android:name=".Intent1" />
+        <activity android:name=".Plus" />
+        <activity android:name=".Listener" />
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

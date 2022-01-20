@@ -1,0 +1,19 @@
+
+
+Context
+1. 역할
+    -> ActivityManagerService에 접근 하도록 해주는 역할
+    -> 주변 정보(엑티비티의 상태에 관한 것)
+
+    * ActivityManagerService
+        안드로이드는 이미 많은 부분들이 만들어져 있다
+        뒤로가기, 라이프사이클, 뷰컴포넌트, 속성 넣는 것 등등..
+        이런 것들을 사용하기 위해서는 Context가 필요한 경우가 많다.
+        개발하기 편하도록 미리 구현해놓은 기능
+
+2. 종류
+    -> activity의 context(주변정보) : Activity의 주변정보
+    -> application의 context(주변정보) : Application의 주변정보
+
+    * Activity와 Application의 차이점
+
