@@ -1,7 +1,6 @@
 // 숨은 버호를 맞추는 게임
 // 컴퓨터는 0~99까지의 임의의 수를 선택하고, 사용자는 이 수를 맞추는 게임
 // '더 높게' or '더 낮게' 출력, 맞으면 y/n으로 재시작을 선택한다.
-package chapter3;
 import java.util.Scanner;
 import java.util.Random;
 import java.util.InputMismatchException;

@@ -1,4 +1,3 @@
-package chapter3;
 // 실습 2
 import java.util.Scanner;
 import java.util.InputMismatchException;

@@ -1,4 +1,3 @@
-package chapter3;
 // 2차원 배열 연습
 public class ScoreAverage {
     public static void main(String[] args){

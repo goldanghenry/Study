@@ -1,5 +1,4 @@
 // 정수를 10개 입력받아 배열에 저장한 후, 배열을 검색하여 3의 배수만 골라 출력하는 프로그램을 작성하라.
-package chapter3;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 

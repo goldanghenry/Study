@@ -1,5 +1,4 @@
 // 3개의 정수를 입력받아 합을 구하는 프로그램
-package chapter3;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 

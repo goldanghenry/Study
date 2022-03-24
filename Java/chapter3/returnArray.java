@@ -1,5 +1,3 @@
-package chapter3;
-
 public class returnArray {
     static int[] makeArray(){
         int temp[] = new int[5];

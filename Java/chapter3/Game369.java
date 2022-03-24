@@ -1,5 +1,3 @@
-package chapter3;
-
 public class Game369 {
     public static void main(String[] args){
         int first, second, clap;

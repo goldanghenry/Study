@@ -1,5 +1,4 @@
 // 영문 소문자를 하나 입력받고 그 문자보다 알파벳 순위가 낮은 모든 문자를 출력하는 프로그램을 작성하라.
-package chapter3;
 import java.util.Scanner;
 
 
