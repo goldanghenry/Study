@@ -24,11 +24,11 @@ public class WordGameApp {
     }
 
     int run(Player a){
-        int lastIndex = this.subject.length();
+        int lastIndex = (this.subject.length()-1);
         char lastChar = this.subject.charAt(lastIndex);
 
         System.out.print(a.name+">>");
-        a.name = sc.next();
+        a.word = sc.next();
         char firstChar = a.word.charAt(0);
         if(lastChar == firstChar) {
             this.subject = a.word;
@@ -53,5 +53,6 @@ public class WordGameApp {
             if(i==game1.num-1) i-=game1.num-1;
             else i++;
         }
+        
     }
 }
