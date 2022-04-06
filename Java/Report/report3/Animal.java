@@ -1,0 +1,26 @@
+// Animal & Dog class
+public class Animal {
+    private String name;
+    public Animal(String name){
+        setName(name);
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public String getName(){
+        return name;
+    }
+    public String bark(){
+        return "동물울음소리";
+    }
+}
+
+class Dog extends Animal {
+    Dog(String name){
+        super(name);
+    }
+    @Override
+    public String bark(){
+        return "멍멍";
+    }
+}
