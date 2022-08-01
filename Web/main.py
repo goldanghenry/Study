@@ -21,3 +21,7 @@ topics=[
 ]
 st.write('## topic table')
 st.table(topics)
+
+import pandas as pd
+topics_df = pd.DataFrame.from_dict(topics)
+topics_df
