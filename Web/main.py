@@ -17,7 +17,8 @@ st.line_chart(view)
 
 topics=[
     {'id':1, 'title':'html', 'view':100},
-    {'id':2, 'title':'css', 'view':50}
+    {'id':2, 'title':'css', 'view':50},
+    {'id':3, 'title':'javascript', 'view':40}
 ]
 st.write('## topic table')
 st.table(topics)
@@ -25,3 +26,5 @@ st.table(topics)
 import pandas as pd
 topics_df = pd.DataFrame.from_dict(topics)
 topics_df
+
+st.bar_chart(topics_df['view'])
