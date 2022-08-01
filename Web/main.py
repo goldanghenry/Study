@@ -5,7 +5,7 @@ view = [100, 78, 4, 30]
 
 st.write('# View List')
 
-show = st.ckeckbox('show raw data')
+show = st.checkbox('show raw data')
 if show == True:
     view
 
