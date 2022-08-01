@@ -4,6 +4,10 @@ import streamlit as st
 view = [100, 78, 4, 30]
 
 st.write('# View List')
+
+show = st.ckeckbox('show raw data')
+show
+
 st.write('## row data ')
 
 view
