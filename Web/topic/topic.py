@@ -18,6 +18,7 @@ st.sidebar.write('# Welcome')
 
 # padas가 sql 쿼리를 날려서 출력하는 것
 import pandas as pd
-topic_db = pd.read_sql('SELECT * FROM topics', con)
+view = str(st.slider('view',0,200,10))   # 슬라이더 0~200 , 단위 10
+topic_db = pd.read_sql('SELECT * FROM topics WHERE view > '+view, con)
 topic_db
 con.close()
