@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <h1><a href="/">WEB</a></h1>
+        <ul>
+          {% for topic in topics %}
+              <li><a href="/read/{{ topic[0] }}">{{ topic[1] }}</a></li>
+          {% endfor %}
+        </ul>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
