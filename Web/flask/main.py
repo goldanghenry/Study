@@ -12,7 +12,7 @@ topics = [
     {"id":2, "title":"css3", "body":"css is ..."}
 ]
 
-@app.route("/") 
+@app.route("/")
 def index(): 
   sql = 'SELECT id, title FROM topics'
   result = cur.execute(sql)
