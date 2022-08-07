@@ -7,16 +7,13 @@ cur = con.cursor()
 
 app = Flask(__name__)
 
-topics = [
-    {"id":1, "title":"html5", "body":"html is ..."},
-    {"id":2, "title":"css3", "body":"css is ..."}
-]
 
 @app.route("/")
 def index(): 
   sql = 'SELECT id, title FROM topics'
   result = cur.execute(sql)
   topics = result.fetchall()
+  print(topics)
   return render_template('welcome.html', topics=topics)
 
 @app.route("/read/<int:id>")
