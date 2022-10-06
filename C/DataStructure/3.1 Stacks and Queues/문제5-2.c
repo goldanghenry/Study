@@ -1,4 +1,3 @@
-// 2014097056 심화컴퓨터 우성현 자료구조 5차시 과제 2번 문제
 #define _CRT_SECURE_NO_WARNINGS
 #define MAX_STACK_SIZE 100
 #include <stdio.h>
@@ -12,26 +11,36 @@ element stack[MAX_STACK_SIZE];
 int top = -1;
 
 void push(int item);
-void pop();
+int pop();
 void stackEmpty();
 void stackFull();
 
 void main() {
-	char CdKey;
-	int data, checkF=1;
+	while (true) {
+		int n = 0;
+		printf('--------메뉴--------\n');
+		printf('1. push\n');
+		printf('2. pop\n');
+		printf('3. print\n');
+		printf('4. exit\n');
+		printf('--------------------\n');
 
-	while (checkF==1) {
-		scanf_s("%c", &CdKey);
-		switch (CdKey) {
-		case 'I': scanf_s("%d", &data); push(data); break;	// insert
-		case 'D': pop(); break;								// delete
-		case 'F': checkF = -1; break;						// exit
+		scanf('%d', &n);
+		switch (n) {
+		case 1:
+			printf('push할 정수를 입력해주세요 :');
+			scanf('%d', &n);
+			push(n); break;
+		case 2:
+			printf('%d를 pop 했습니다.', pop()); break;
+		case 3:
+			printf('stack을 출력합니다.\n');
+			for (int i = 0; i <= top; i++) {
+				printf("%d ", stack[i].key);
+			}
+		case 4:
+			exit(0)
 		}
-	}
-
-	// 출력
-	for (int i = 0; i <= top; i++) {
-		printf("%d ", stack[i].key);
 	}
 }
 
@@ -42,12 +51,16 @@ void push(int item) {
 	stack[++top].key = item;
 }
 
-void pop() {
+int pop() {
 	/* delete and return the top element from the stack */
 	if (top == -1) {
 		stackEmpty();	/* return an error key */
 	}
-	else top -= 1;
+	else {
+		top -= 1;
+		t = top + 1;
+		return stack[t].key;
+	}
 }
 
 void stackFull() {
