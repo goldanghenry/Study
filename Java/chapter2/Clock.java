@@ -1,5 +1,4 @@
 // 초 단위의 정수를 입력받고, 몇 시간, 몇 분, 몇 초인지 출력하라
-package chapter2;
 import java.util.Scanner;
 
 public class Clock {

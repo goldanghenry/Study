@@ -1,4 +1,3 @@
-package chapter2;
 import java.util.Scanner;
 // 실습1
 public class coffeeDiscount {
