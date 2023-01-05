@@ -1,4 +1,4 @@
-package chapter2;
+package report1;
 import java.util.Scanner;
 
 public class Report1 {

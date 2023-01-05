@@ -5,6 +5,7 @@ public class arithmeticOperator {
         double a, b;
         String o;
 
+        
         System.out.print("식을 입력하세요>>");
         a = sc.nextDouble();
         o = sc.next();

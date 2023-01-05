@@ -6,6 +6,7 @@ public class Account1 {
         this.name = n;
         this.balance = 0.0;
     }
+    
     public String getName(){
         return this.name;
     }
