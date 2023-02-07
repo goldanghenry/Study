@@ -1,16 +1,17 @@
 package com.example.hello.Controller;
 
+import com.example.hello.dto.MemberDto;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
 // RestController와 RequestMapping을 붙여 내부에 선언되는 메서드에서 사용할 공통 URL을 설정
-// 클래스 수준에서 RequestMapping을 설정하면 내부에 서넝ㄴ한 메서드의 URL 리소스 앞에 @RequestMapping의 값이 공통 값으로 추가 된다
+// 클래스 수준에서 RequestMapping을 설정하면 내부에 선언한 메서드의 URL 리소스 앞에 @RequestMapping의 값이 공통 값으로 추가 된다
 @RestController
 @RequestMapping("api/v1/get-api")
 public class GetController {
-    // 1. 매개 변수가 있는 GET API
+    // 1. RequestMapping GET API
     // http://localhost:8080/api/v1/get-api/hello
     @RequestMapping(value="/hello", method = RequestMethod.GET)
     public String getHello() {
@@ -59,4 +60,13 @@ public class GetController {
         });
         return sb.toString();
     }
+
+    // 5. DTO 객체를 활용한 GET 메서드 구현
+    // http://localhost:8080/api/v1/get-api/request3?name=value1&email=value2&organization=value3
+    @GetMapping(value="/request3")
+    public String getRequestParam3(MemberDto memberDto){
+        // return memberDto.getName() + memberDto.getEmail();
+        return memberDto.toString();
+    }
+
 }
