@@ -31,7 +31,4 @@ public class PostController {
     public String postMemberDto(@RequestBody MemberDto memberDto){
         return memberDto.toString();
     }
-
-
-
 }
