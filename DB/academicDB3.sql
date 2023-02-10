@@ -1,0 +1,14 @@
+use academicDB;
+select * from student;
+select sname from student;
+select sname, sdept from student;
+select * from student where sdept = "컴퓨터";
+select * from course where credit >=3;
+select * from course where year = 2 or year = 3;
+select * from course where credit = 3 and year = 3;
+select * from enroll inner join student on enroll.sno = student.sno;
+select sname, stel from enroll inner join student on enroll.sno = student.sno where grade='A0';
+select student.sno, sname, code, grade from student left outer join enroll on enroll.sno = student.sno;
+select * from student cross join enroll;
+select * from student, enroll;
+select * from student, enroll where student.sno = enroll.sno;
