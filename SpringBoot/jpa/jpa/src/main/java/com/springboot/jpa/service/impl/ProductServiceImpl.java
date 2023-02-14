@@ -14,7 +14,9 @@ import java.time.LocalDateTime;
 public class ProductServiceImpl implements ProductService {
     private final ProductDAO productDAO;
     @Autowired
-    public ProductServiceImpl(ProductDAO productDAO){ this.productDAO = productDAO; }
+    public ProductServiceImpl(ProductDAO productDAO){
+        this.productDAO = productDAO;
+    }
     @Override
     public ProductResponseDto getProduct(Long number){
         Product product = productDAO.selectProduct(number);
