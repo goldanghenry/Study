@@ -1,8 +1,12 @@
 package com.springboot.advanced_jpa.data.repository;
 
 import com.springboot.advanced_jpa.data.entity.Product;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
@@ -81,6 +85,17 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     // 매개변수를 활용한 쿼리 정렬
     List<Product> findByName(String name, Sort sort);
 
+    // 페이징 처리를 위한 쿼리 메서드 예시
+    // Page 리턴, 매개변수에는 Pageable 타입의 객체 정의
+    Page<Product> findByName(String name, Pageable pageable);
 
+    // @Query 어노테이션을 사용해 직접 JPQL 작성
+    // 파라미터를 바인딩하는 방식으로 메서드를 구현하면 코드의 가독성이 높아지고 유지보수가 수월해진다.
+    @Query("SELECT p FORM Product p WHERE p.name= :name")
+    List<Product> findByNameParam(@Param("name") String name);
+
+    // 엔티티 타입이 아닌 원하는 칼럼만 추출하기
+    @Query("SELECT p.name, p.price, p.stock FROM Product p WHERE p.name = :name")
+    List<Object[]>findByParam2(@Param("name") String name);
 
 }

@@ -4,9 +4,14 @@ import com.springboot.advanced_jpa.data.entity.Product;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @SpringBootTest
 public class ProductRepositoryTest {
@@ -44,6 +49,10 @@ public class ProductRepositoryTest {
         productRepository.findByName("펜", Sort.by(Sort.Order.asc("price"), Sort.Order.desc("stock")));
 
         System.out.println(productRepository.findByName("펜", getSort()));
+
+        Page<Product> productPage = productRepository.findByName("펜", PageRequest.of(0,2));
+        System.out.println(productPage.getContent());
+
 
     }
     // 쿼리 메서드에서 정렬 부분을 분리
