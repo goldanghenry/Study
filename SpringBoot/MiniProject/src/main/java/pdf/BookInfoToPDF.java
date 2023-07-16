@@ -6,7 +6,9 @@ import com.itextpdf.kernel.font.PdfFontFactory;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.element.Paragraph;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.Year;
@@ -24,18 +26,29 @@ public class BookInfoToPDF {
 
         try {
             // PDF 생성을 위한 PdfWriter 객체 생성
-            PdfWriter writer = new PdfWriter(new FileOutputStream("book_infoation.pdf"));
+            PdfWriter writer = new PdfWriter(new FileOutputStream("book_information.pdf"));
             //  PdfWriter 객체를 사용하여 PdfDocument 객체 생성
             PdfDocument pdf = new PdfDocument(writer);
             // Document 객체 생성
             Document document = new Document(pdf);
 
-            // 폰트 생성 및 추가
+            // 폰트 생성 및 추가 , UTF-8
             PdfFont font = PdfFontFactory.createFont("NANUMGOTHICLIGHT.TTF", PdfEncodings.IDENTITY_H, true);
             
             document.setFont(font);
             
             // 책 정보를 문단으로 생성하여 Document에 추가
+            for (String key: bookInfo.keySet()){
+                Paragraph paragraph = new Paragraph(key + ": " + bookInfo.get(key));
+                document.add(paragraph);
+            }
+
+            // Document 닫기 -> 저장됨
+            document.close();
+
+            System.out.println("book_information.pdf 파일이 생성되었습니다.");
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }
