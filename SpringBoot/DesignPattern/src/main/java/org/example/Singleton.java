@@ -11,3 +11,25 @@ class Singleton {
         return SingleInstanceHolder.INSTANCE;
     }
 }
+/*
+public class Singleton {
+    // private 정적 변수로 자신의 유일한 인스턴스를 가지고 있음
+    private static Singleton instance;
+
+    // private 생성자로 외부에서 객체 생성을 막음
+    private Singleton() {
+        // 초기화 코드
+    }
+
+    // 공개 정적 메서드를 통해 외부에서 인스턴스에 접근
+    public static Singleton getInstance() {
+        if (instance == null) {
+            // 인스턴스가 없으면 생성
+            instance = new Singleton();
+        }
+        return instance;
+    }
+
+    // 다른 메서드 및 속성들을 추가할 수 있음
+}
+*/
