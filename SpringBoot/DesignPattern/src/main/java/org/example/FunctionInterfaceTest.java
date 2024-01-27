@@ -56,5 +56,32 @@ class AverageCalculator<T extends Number> {
     }
 }
 
-public class GenericTest {
+@FunctionalInterface
+interface MathOperation {
+    int operation(int x, int y);
+}
+
+//public class FunctionInterfaceTest1 implements MathOperation {
+//    public static void main(String[] args) {
+//        MathOperation mo = new FunctionInterfaceTest();
+//        int result = mo.operation(10,20);
+//        System.out.println("10+20 =" +result);
+//    }
+//    @Override
+//    public int operation(int x, int y) {
+//        return x+y;
+//    }
+//}
+
+public class FunctionInterfaceTest {
+    public static void main(String[] args){
+        MathOperation mo = new MathOperation(){
+            @Override
+            public int operation(int x, int y) {
+                return x+y;
+            }
+        };
+        int result = mo.operation(10,20);
+        System.out.println("10 + 20 =" + result);
+    }
 }

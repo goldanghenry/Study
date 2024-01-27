@@ -1,4 +1,5 @@
 package org.example;
+/*
 // 중첩 클래스로 싱글톤 패턴 구현
 class Singleton {
     // static으로 SingleInstanceHolder 클래스 생성
@@ -11,7 +12,7 @@ class Singleton {
         return SingleInstanceHolder.INSTANCE;
     }
 }
-/*
+*/
 public class Singleton {
     // private 정적 변수로 자신의 유일한 인스턴스를 가지고 있음
     private static Singleton instance;
@@ -32,4 +33,3 @@ public class Singleton {
 
     // 다른 메서드 및 속성들을 추가할 수 있음
 }
-*/
