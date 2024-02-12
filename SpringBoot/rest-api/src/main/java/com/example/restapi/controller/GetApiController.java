@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController                 // RestController를 사용할 것
 @RequestMapping("/api")      // 이 컨트롤러는 /api라는 주소를 모두 받아들이겠다
-public class RestApiController {
+public class GetApiController {
 
     // 1. simple path
     @GetMapping(path = "/hello")    // http://localhost/api/hello
@@ -68,7 +68,7 @@ public class RestApiController {
     ){
         System.out.println(bookQueryParam);
         // BookQueryParam(category=IT, issuedYear=2023, issuedMonth=null, issuedDay=null)
-        // 객체로 받을 때는 이름이 일치해야함. 주소 설계시 카멜 케이스로 통일
+        // 객체로 받을 때는 이름이 일치해야함. 규칙으로 주소 설계시 카멜 케이스로 통일
     }
 
     // TODO Parameter 2개를 int type으로 받아서 두 수의 뎃셈, 곱셈을 리턴하는 메서드
