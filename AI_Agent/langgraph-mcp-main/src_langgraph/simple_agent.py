@@ -9,7 +9,7 @@ from langgraph.graph.message import add_messages
 from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 load_dotenv()
-print(os.getenv("OPENAI_API_KEY"))
+# print(os.getenv("OPENAI_API_KEY"))
 # Define the State structure with annotations
 class State(TypedDict):
     messages: Annotated[list, add_messages]
@@ -17,7 +17,7 @@ class State(TypedDict):
 
 # Create a StateGraph and language model instance
 graph_builder = StateGraph(State)
-llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
+llm = ChatOpenAI(model="gpt-4.1-nano", temperature=0)
 
 
 # Define the chatbot function
